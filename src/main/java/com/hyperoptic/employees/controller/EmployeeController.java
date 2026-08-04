@@ -138,6 +138,7 @@ public class EmployeeController {
                     )
             )
     })
+    @Operation(summary = "Patches Employee's data for provided ID.")
     @ResponseStatus(NO_CONTENT)
     public void update(
             @PathVariable Long id,
@@ -161,6 +162,7 @@ public class EmployeeController {
                     )
             )
     })
+    @Operation(summary = "Deletes Employee by provided ID.")
     @ResponseStatus(NO_CONTENT)
     public void delete(@PathVariable Long id) {
         service.delete(id);
