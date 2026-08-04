@@ -51,7 +51,10 @@ public class EmployeeController {
             @ApiResponse(
                     responseCode = "400",
                     description = "Bad request. Employee creation parameters not valid",
-                    content = @Content
+                    content = @Content(
+                            mediaType = MediaType.APPLICATION_JSON_VALUE,
+                            schema = @Schema(implementation = ProblemDetail.class)
+                    )
             )
     })
     @ResponseStatus(CREATED)
@@ -73,7 +76,10 @@ public class EmployeeController {
             @ApiResponse(
                     responseCode = "400",
                     description = "Bad request. Employee Not found.",
-                    content = @Content
+                    content = @Content(
+                            mediaType = MediaType.APPLICATION_JSON_VALUE,
+                            schema = @Schema(implementation = ProblemDetail.class)
+                    )
             )
     })
     @ResponseStatus(OK)
@@ -106,7 +112,10 @@ public class EmployeeController {
             @ApiResponse(
                     responseCode = "404",
                     description = "Bad request. Employee Not found.",
-                    content = @Content
+                    content = @Content(
+                            mediaType = MediaType.APPLICATION_JSON_VALUE,
+                            schema = @Schema(implementation = ProblemDetail.class)
+                    )
             )
     })
     @ResponseStatus(OK)
